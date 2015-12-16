@@ -1,0 +1,41 @@
+<% if @log.kind_of?(Array) -%>
+<%= @log.join(" ") %> {
+<% else -%>
+<%= @log %> {
+<% end -%>
+<% if defined?(@su) -%>
+  su <%= @su.join(" ") %>
+<% end -%>
+<% if defined?(@rotate) -%>
+  rotate <%= @rotate %>
+<% end -%>
+<% if defined?(@maxage) -%>
+  maxage <%= @maxage %>
+<% end -%>
+<% if defined?(@frequency) -%>
+  <%= @frequency %>
+<% end -%>
+<% if (@dateext) -%>
+  dateext
+<% end -%>
+<% if (@copytruncate) -%>
+  copytruncate
+<% end -%>
+<% if defined?(@notifempty) -%>
+  <% if @notifempty %>notifempty<% else %>ifempty<% end %>
+<% end -%>
+<% if defined?(@compress) -%>
+  <% if @compress %>compress<% else %>nocompress<% end %>
+<% end -%>
+<% if defined?(@delaycompress) and @delaycompress -%>
+  delaycompress
+<% end -%>
+<% if defined?(@missingok) -%>
+  <% if @missingok %>missingok<% else %>nomissingok<% end %>
+<% end -%>
+<% if defined?(@postrotate) -%>
+  postrotate
+    <%= @postrotate %>
+  endscript
+<% end -%>
+}

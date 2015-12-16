@@ -1,0 +1,49 @@
+#
+# puppet managed - do not edit
+#
+
+# see "man logrotate" for details
+# rotate log files weekly
+weekly
+
+<% if scope.lookupvar('logrotate::params::su_default') -%>
+# default user and group
+su <%= scope.lookupvar('logrotate::params::su_default') %>
+<% end -%>
+
+# keep 4 weeks worth of backlogs
+rotate 4
+
+# create new (empty) log files after rotating old ones
+create
+
+<% if @compress -%>
+#compress log files
+compress
+<% end -%>
+
+<% if @dateext -%>
+# use date as a suffix of the rotated file
+dateext
+<% end -%>
+
+# packages drop log rotation information into this directory
+include /etc/logrotate.d
+include /etc/logrotate.d/puppet-managed
+
+# no packages own wtmp, or btmp -- we'll rotate them here
+/var/log/wtmp {
+    missingok
+    monthly
+    create 0664 root utmp
+    rotate 1
+}
+
+/var/log/btmp {
+    missingok
+    monthly
+    create 0660 root utmp
+    rotate 1
+}
+
+# system-specific logs may be configured here
