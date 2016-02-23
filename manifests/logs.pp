@@ -17,10 +17,10 @@ define logrotate::logs(
 
   #
   file { "${logrotate::params::puppet_managed_dir}/${namelog}":
-    ensure => $ensure,
-    owner => 'root',
-    group => 'root',
-    mode => '0644',
+    ensure  => $ensure,
+    owner   => 'root',
+    group   => 'root',
+    mode    => '0644',
     require => [ Package[$logrotate::params::package_logrotate], File[$logrotate::params::puppet_managed_dir] ],
     content => template("${module_name}/logfile_template.erb")
   }
