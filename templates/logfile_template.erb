@@ -33,6 +33,9 @@
 <% if defined?(@missingok) -%>
   <% if @missingok %>missingok<% else %>nomissingok<% end %>
 <% end -%>
+<% if defined?(@size) -%>
+    size <%= @size %>
+<% end -%>
 <% if defined?(@postrotate) -%>
   postrotate
     <%= @postrotate %>
