@@ -29,6 +29,8 @@ dateext
 
 # packages drop log rotation information into this directory
 include /etc/logrotate.d
+
+# puppet managed log rotation configuration
 include /etc/logrotate.d/puppet-managed
 
 # no packages own wtmp, or btmp -- we'll rotate them here
