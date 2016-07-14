@@ -33,7 +33,7 @@ Manages:
 
 ### Setup Requirements
 
-TODO
+This module requires pluginsync enabled
 
 ### Beginning with logrotate
 
@@ -67,7 +67,41 @@ TODO
 
 ## Reference
 
-TODO
+### classes
+
+#### logrotate
+
+* ensure                           = 'installed',
+* compress                         = true,
+* dateext                          = true,
+* overwrite_default_logrotate_conf = true,
+* create                           = true,
+* rotate                           = '4',
+* frequency                        = 'weekly',
+
+### defines
+
+#### logrotate::logs
+
+* log,
+* namelog       = $name,
+* ensure        = 'present',
+* su            = undef,
+* rotate        = undef,
+* maxage        = undef,
+* compress      = undef,
+* delaycompress = undef,
+* notifempty    = undef,
+* frequency     = undef,
+* missingok     = undef,
+* postrotate    = undef,
+* dateext       = false,
+* copytruncate  = false,
+* size          = undef,
+* create_mode   = undef,
+* create_owner  = undef,
+* create_group  = undef,
+* custom_file   = undef,
 
 ## Limitations
 
