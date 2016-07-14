@@ -4,7 +4,7 @@
 
 # see "man logrotate" for details
 # rotate log files weekly
-weekly
+<%= @frequency %>
 
 <% if scope.lookupvar('logrotate::params::su_default') -%>
 # default user and group
@@ -12,10 +12,12 @@ su <%= scope.lookupvar('logrotate::params::su_default') %>
 <% end -%>
 
 # keep 4 weeks worth of backlogs
-rotate 4
+rotate <%= @rotate %>
 
+<% if @create -%>
 # create new (empty) log files after rotating old ones
 create
+<% end -%>
 
 <% if @compress -%>
 #compress log files

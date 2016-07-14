@@ -3,6 +3,9 @@ class logrotate (
                   $dateext                          = true,
                   $ensure                           = 'installed',
                   $overwrite_default_logrotate_conf = true,
+                  $create                           = true,
+                  $rotate                           = '4',
+                  $frequency                        = 'weekly',
                 ) inherits logrotate::params {
 
   package { $logrotate::params::package_logrotate:

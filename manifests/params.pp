@@ -11,6 +11,7 @@ class logrotate::params {
       {
         /^[6-7].*$/:
         {
+          $su_default=undef
         }
         default: { fail("Unsupported RHEL/CentOS version! - ${::operatingsystemrelease}")  }
       }
