@@ -19,13 +19,17 @@ logrotate configuration
 
 ## Module Description
 
-TODO
+manages logrotate configuration files
 
 ## Setup
 
 ### What logrotate affects
 
-TODO
+Manages:
+* logrotate package
+* files and directories:
+  * /etc/logrotate.conf
+  * /etc/logrotate.d/puppet-managed
 
 ### Setup Requirements
 
