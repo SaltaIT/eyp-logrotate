@@ -17,10 +17,22 @@ define logrotate::logs(
                         $create_mode   = undef,
                         $create_owner  = undef,
                         $create_group  = undef,
+                        $custom_file   = undef,
                       ) {
 
   #
-  file { "${logrotate::params::puppet_managed_dir}/${namelog}":
+  if($custom_file!=undef)
+  {
+    validate_absolute_path($custom_file)
+    $logrotate_filename=$custom_file
+  }
+  else
+  {
+    $logrotate_filename="${logrotate::params::puppet_managed_dir}/${namelog}"
+  }
+
+
+  file { $logrotate_filename:
     ensure  => $ensure,
     owner   => 'root',
     group   => 'root',
