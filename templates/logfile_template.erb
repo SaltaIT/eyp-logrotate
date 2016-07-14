@@ -3,6 +3,9 @@
 <% else -%>
 <%= @log %> {
 <% end -%>
+<% if defined?(@create_mode) or defined?(@create_owner) or defined?(@create_group) -%>
+  create <% if defined?(@create_mode) %><%= @create_mode %><% else %>0640<% end %> <% if defined?(@create_owner) %><%= @create_owner %><% else %>root<% end %> <% if defined?(@create_group) %><%= @create_group %><% else %>root<% end %>
+<% end -%>
 <% if defined?(@su) -%>
   su <%= @su.join(" ") %>
 <% end -%>

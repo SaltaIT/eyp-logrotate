@@ -14,6 +14,9 @@ define logrotate::logs(
                         $dateext       = false,
                         $copytruncate  = false,
                         $size          = undef,
+                        $create_mode   = undef,
+                        $create_owner  = undef,
+                        $create_group  = undef,
                       ) {
 
   #
