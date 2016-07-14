@@ -1,8 +1,8 @@
 class logrotate (
-      $compress = true,
-      $dateext = true,
-      $ensure = 'installed',
-      $overwrite_default_logrotate_conf=true,
+      $compress                         = true,
+      $dateext                          = true,
+      $ensure                           = 'installed',
+      $overwrite_default_logrotate_conf = true,
     ) inherits logrotate::params {
 
   package { $logrotate::params::package_logrotate:
@@ -15,7 +15,7 @@ class logrotate (
     if($overwrite_default_logrotate_conf)
     {
       file { '/etc/logrotate.conf':
-        ensure  => file,
+        ensure  => 'present',
         owner   => 'root',
         group   => 'root',
         mode    => '0644',
