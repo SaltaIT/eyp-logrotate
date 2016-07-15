@@ -63,7 +63,37 @@ logrotates:
 
 ## Usage
 
-TODO
+example usage:
+
+```puppet
+class { 'logrotate': }
+
+logrotate::logs { 'example':
+  create_mode => '0777',
+  rotate      => '3',
+}
+
+logrotate::logs { 'bitban1':
+  log           => '/deploy/VAR/local/elespanol/www.elespanol.com/BB3Logs/*log*',
+  su            => [ 'bbt-deploy', 'bbt-deploy' ],
+  rotate        => '2',
+  frequency     => 'daily',
+  notifempty    => true,
+  compress      => true,
+  delaycompress => true,
+  missingok     => true,
+}
+
+logrotate::logs { 'rotatnginx':
+  log        => '/LOGS/web/*.log',
+  rotate     => '2',
+  frequency  => 'daily',
+  notifempty => true,
+  compress   => true,
+  missingok  => true,
+  postrotate => '/etc/init.d/nginx reload',
+}
+```
 
 ## Reference
 
