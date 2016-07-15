@@ -71,37 +71,38 @@ TODO
 
 #### logrotate
 
-* ensure                           = 'installed',
-* compress                         = true,
-* dateext                          = true,
-* overwrite_default_logrotate_conf = true,
-* create                           = true,
-* rotate                           = '4',
-* frequency                        = 'weekly',
+* **ensure**: package status (default: installed)
+* **overwrite_default_logrotate_conf**: (default: true)
+* default behaviour:
+  * **compress**: compress log files (default: true)
+  * **dateext**: use date as a suffix of the rotated file (default: true)
+  * **create**: create new (empty) log files after rotating old ones (default: true)
+  * **rotate**: keep rotations worth of backlogs (default: 4)
+  * **frequency**: log rotation frequency (default: weekly)
 
 ### defines
 
 #### logrotate::logs
 
-* log,
-* namelog       = $name,
-* ensure        = 'present',
-* su            = undef,
-* rotate        = undef,
-* maxage        = undef,
-* compress      = undef,
-* delaycompress = undef,
-* notifempty    = undef,
-* frequency     = undef,
-* missingok     = undef,
-* postrotate    = undef,
-* dateext       = false,
-* copytruncate  = false,
-* size          = undef,
-* create_mode   = undef,
-* create_owner  = undef,
-* create_group  = undef,
-* custom_file   = undef,
+* **log**: log files to rotate (it can be an array or string)
+* **namelog**: (default: resource's name)       
+* **ensure**: log rotation config file presence (default: present)
+* **su**: array, change ownership (default: undef)
+* **rotate**: keep rotations worth of backlogs (default: undef)
+* **maxage**: Remove  rotated  logs older than **maxage** days (default: undef)
+* **compress**: compress log files (default: undef)
+* **delaycompress**: Postpone compression of the previous log file to the next rotation cycle (default: undef)
+* **notifempty**: Do not rotate if file is empty (default: undef)
+* **frequency**: log rotation frequency (default: undef)
+* **missingok**: If the log file is missing, go on to the next one without issuing an error message (default: undef)
+* **postrotate**: post rotation action (default: undef)
+* **dateext**: use date as a suffix of the rotated file (default: false)
+* **copytruncate**: Truncate the original log file to zero size in place after creating a copy (default: false)
+* **size**: Log files are rotated only if they grow bigger then **size** bytes (default: undef)
+* **create_mode**: file creation mode, if create_owner and/or create_group are defined, defaults to 0640 (default: undef)
+* **create_owner**: file creation owner, if create_mode and/or create_group are defined, defaults to root (default: undef)
+* **create_group**: file creation group, if create_mode and/or create_group are defined, defaults to root (default: undef)
+* **custom_file**: create log file rotation on a custom file path (default: undef)
 
 ## Limitations
 
