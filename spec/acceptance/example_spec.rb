@@ -13,6 +13,7 @@ describe 'logrotate class' do
       logrotate::logs { 'example':
         create_mode => '0777',
         rotate      => '3',
+        log         => [ '/var/example/log1', '/var/example/log2' ],
       }
 
       logrotate::logs { 'bitban1':
