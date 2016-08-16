@@ -3,7 +3,7 @@ require_relative './version.rb'
 
 describe 'logrotate class' do
 
-  context 'basic setup' do
+  context 'example setup' do
     # Using puppet_apply as a helper
     it 'should work with no errors' do
       pp = <<-EOF
