@@ -9,7 +9,7 @@ class logrotate::params {
         {
       case $::operatingsystemrelease
       {
-        /^[6-7].*$/:
+        /^[5-7].*$/:
         {
           $su_default=undef
         }
