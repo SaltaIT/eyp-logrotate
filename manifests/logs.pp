@@ -1,5 +1,5 @@
 define logrotate::logs(
-                        $log,
+                        $log           = undef,
                         $namelog       = $name,
                         $ensure        = 'present',
                         $su            = undef,
@@ -29,6 +29,11 @@ define logrotate::logs(
   else
   {
     $logrotate_filename="${logrotate::params::puppet_managed_dir}/${namelog}"
+  }
+
+  if($ensure=='present' and $log==undef)
+  {
+    fail('Must pass log to Logrotate::Logs while ensuring it is present')
   }
 
 
