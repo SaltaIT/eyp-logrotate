@@ -52,6 +52,26 @@ describe 'logrotate class' do
       its(:content) { should match '# DO NOT CONFIGURE system-specific logs here' }
     end
 
+    describe file($example_nginx) do
+      it { should be_file }
+      its(:content) { should match 'rotate 2' }
+      its(:content) { should match 'compress' }
+      its(:content) { should_not match 'delaycompress' }
+    end
+
+    describe file($example_bitban) do
+      it { should be_file }
+      its(:content) { should match 'rotate 2' }
+      its(:content) { should match 'compress' }
+      its(:content) { should match 'delaycompress' }
+    end
+
+    describe file($example_demo) do
+      it { should be_file }
+      its(:content) { should match 'rotate 3' }
+      its(:content) { should match 'create 0777 root root' }
+    end
+
   end
 
 end

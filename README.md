@@ -96,6 +96,47 @@ logrotate::logs { 'rotatnginx':
 }
 ```
 
+### puppet managed configuration files
+
+This is going to generate the following logrotate configuration files:
+
+#### /etc/logrotate.d/puppet-managed/rotatnginx
+```
+/LOGS/web/*.log {
+  rotate 2
+  daily
+  notifempty
+  compress
+  missingok
+  postrotate
+    /etc/init.d/nginx reload
+  endscript
+}
+```
+#### /etc/logrotate.d/puppet-managed/bitban1
+```
+/deploy/VAR/local/elespanol/www.elespanol.com/BB3Logs/*log* {
+  su bbt-deploy bbt-deploy
+  rotate 2
+  daily
+  notifempty
+  compress
+  delaycompress
+  missingok
+}
+```
+
+#### /etc/logrotate.d/puppet-managed/example
+
+```
+/var/example/log1 /var/example/log2 {
+  create 0777 root root
+  rotate 3
+}
+```
+
+
+
 ## Reference
 
 ### classes
