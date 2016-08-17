@@ -12,7 +12,7 @@ group :system_tests do
   gem 'beaker_spec_helper',  :require => false
   gem 'beaker-puppet_install_helper', :require => false
   gem 'serverspec',          :require => false
-  gem 'rspec', '< 3.2',      :require => false if RUBY_VERSION =~ /^1\.8/
+  gem 'rspec',               :require => false
   gem 'rspec-puppet',        :require => false
   gem 'metadata-json-lint',  :require => false
 end
