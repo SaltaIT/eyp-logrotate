@@ -14,4 +14,4 @@ HOSTS:
       - 'systemctl mask firewalld'
 CONFIG:
   type: aio
-log_level: debug
+  log_level: debug
