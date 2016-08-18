@@ -9,9 +9,8 @@ HOSTS:
     docker_preserve_image: true
     docker_cmd: '["/usr/sbin/init"]'
     docker_image_commands:
-      - 'yum install -y openssl gcc make crontabs tar wget iproute java-1.7.0-openjdk java-1.7.0-openjdk-devel'
-      - 'systemctl stop firewalld'
-      - 'systemctl mask firewalld'
+      - 'rm -rf /var/run/network/*'
+      - 'yum install -y openssl-devel gcc make crontabs tar wget iproute java-1.7.0-openjdk java-1.7.0-openjdk-devel'
 CONFIG:
-  type: aio
+  type: foss
   log_level: debug
