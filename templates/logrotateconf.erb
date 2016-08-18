@@ -6,9 +6,9 @@
 # rotate log files weekly
 <%= @frequency %>
 
-<% if scope.lookupvar('logrotate::params::su_default') -%>
+<% if defined?(@su) -%>
 # default user and group
-su <%= scope.lookupvar('logrotate::params::su_default') %>
+su <%= @su %>
 <% end -%>
 
 # keep 4 weeks worth of backlogs

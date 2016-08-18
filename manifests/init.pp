@@ -6,6 +6,7 @@ class logrotate (
                   $create                           = true,
                   $rotate                           = '4',
                   $frequency                        = 'weekly',
+                  $su                               = $logrotate::params::su_default,
                 ) inherits logrotate::params {
 
   package { $logrotate::params::package_logrotate:
