@@ -178,7 +178,11 @@ This is going to generate the following logrotate configuration files:
 
 ## Limitations
 
-Tested on Ubuntu 14.04, should also work on CentOS
+Tested on:
+* Ubuntu 14.04
+* CentOS 5
+* CentOS 6
+* CentOS 7
 
 ## Development
 
