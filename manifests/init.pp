@@ -23,7 +23,7 @@ class logrotate (
         owner   => 'root',
         group   => 'root',
         mode    => '0644',
-        content => template('logrotate/logrotateconf.erb'),
+        content => template("${module_name}/logrotateconf.erb"),
         require => Package[$logrotate::params::package_logrotate],
       }
     }
