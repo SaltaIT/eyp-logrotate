@@ -1,4 +1,4 @@
-# logrotate ![status ready](https://img.shields.io/badge/status-ready-brightgreen.svg) ![doc missing](https://img.shields.io/badge/doc-partial-yellow.svg)
+# logrotate ![status ready](https://img.shields.io/badge/status-ready-brightgreen.svg) ![doc completed](https://img.shields.io/badge/doc-completed-brightgreen.svg)
 
 
 #### Table of Contents
