@@ -36,6 +36,8 @@ define logrotate::logs(
     fail('Must pass log to Logrotate::Logs while ensuring it is present')
   }
 
+  include ::logrotate
+
   file { $logrotate_filename:
     ensure  => $ensure,
     owner   => 'root',
