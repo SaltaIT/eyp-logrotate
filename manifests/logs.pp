@@ -43,7 +43,7 @@ define logrotate::logs(
     owner   => 'root',
     group   => 'root',
     mode    => '0644',
-    require => [ Class['::logrotate'], File[$logrotate::params::puppet_managed_dir] ],
+    require => Class['::logrotate'],
     content => template("${module_name}/logfile_template.erb")
   }
 

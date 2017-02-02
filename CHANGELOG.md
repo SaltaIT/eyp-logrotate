@@ -1,8 +1,8 @@
 # CHANGELOG
 
-## 0.1.18
+## 0.1.29
 
-* added dependency for **logrotate::logs**
+* added dependency **logrotate** dependency for **logrotate::logs**
 
 ## 0.1.27
 
