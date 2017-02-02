@@ -1,5 +1,9 @@
 # CHANGELOG
 
+## 0.1.18
+
+* added dependency for **logrotate::logs**
+
 ## 0.1.27
 
 * autoinclude **::logrotate** in **logrotate::logs**
