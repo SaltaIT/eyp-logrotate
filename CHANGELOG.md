@@ -1,5 +1,9 @@
 # CHANGELOG
 
+## 0.1.30
+
+* ubuntu16 support
+
 ## 0.1.29
 
 * added dependency **logrotate** dependency for **logrotate::logs**

@@ -25,7 +25,7 @@ class logrotate::params {
         {
           case $::operatingsystemrelease
           {
-            /^14.*$/:
+            /^1[46].*$/:
             {
               $su_default='root syslog'
             }

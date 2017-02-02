@@ -1,6 +1,6 @@
 {
   "name": "eyp-logrotate",
-  "version": "0.1.29",
+  "version": "0.1.30",
   "author": "eyp",
   "summary": "manages logrotate",
   "license": "Apache-2.0",
@@ -33,7 +33,7 @@
     },
     {
       "operatingsystem": "Ubuntu",
-      "operatingsystemrelease": [ "14.04" ]
+      "operatingsystemrelease": [ "14.04", "16.04" ]
     },
     {
       "operatingsystem": "SLES",
