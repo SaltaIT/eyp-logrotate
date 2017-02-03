@@ -1,5 +1,9 @@
 # CHANGELOG
 
+## 0.1.31
+
+* added **puppet_managed_dir** as a varible to be able to customize it
+
 ## 0.1.30
 
 * ubuntu16 support

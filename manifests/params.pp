@@ -1,7 +1,7 @@
 class logrotate::params {
 
   $package_logrotate='logrotate'
-  $puppet_managed_dir='/etc/logrotate.d/puppet-managed'
+  $puppet_managed_dir_default='/etc/logrotate.d/puppet-managed'
 
   case $::osfamily
   {

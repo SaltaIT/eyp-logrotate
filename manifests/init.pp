@@ -7,6 +7,7 @@ class logrotate (
                   $rotate                           = '4',
                   $frequency                        = 'weekly',
                   $su                               = $logrotate::params::su_default,
+                  $puppet_managed_dir               = $logrotate::params::puppet_managed_dir_default,
                 ) inherits logrotate::params {
 
   package { $logrotate::params::package_logrotate:
