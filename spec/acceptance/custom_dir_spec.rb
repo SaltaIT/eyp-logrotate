@@ -3,12 +3,14 @@ require_relative './version.rb'
 
 describe 'logrotate class' do
 
-  context 'basic setup' do
+  context 'custom dir setup' do
     # Using puppet_apply as a helper
     it 'should work with no errors' do
       pp = <<-EOF
 
-      class { 'logrotate': }
+      class { 'logrotate':
+        puppet_managed_dir => '/tmp/test_logrotate_dir_custom'
+      }
 
       EOF
 
@@ -20,13 +22,11 @@ describe 'logrotate class' do
     #/etc/logrotate.conf
     describe file($baseconf) do
       it { should be_file }
-      its(:content) { should match 'puppet managed' }
-      its(:content) { should match 'include /etc/logrotate.d/puppet-managed' }
-      its(:content) { should match '# DO NOT CONFIGURE system-specific logs here' }
+      its(:content) { should match 'include /tmp/test_logrotate_dir_custom' }
     end
 
     #/etc/logrotate.d/puppet-managed
-    describe file('/etc/logrotate.d/puppet-managed') do
+    describe file('/tmp/test_logrotate_dir_custom') do
       it { should be_directory }
     end
 

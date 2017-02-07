@@ -52,6 +52,11 @@ describe 'logrotate class' do
       its(:content) { should match '# DO NOT CONFIGURE system-specific logs here' }
     end
 
+    #/etc/logrotate.d/puppet-managed
+    describe file('/etc/logrotate.d/puppet-managed') do
+      it { should be_directory }
+    end
+
     describe file($example_nginx) do
       it { should be_file }
       its(:content) { should match 'rotate 2' }
