@@ -1,5 +1,9 @@
 # CHANGELOG
 
+## 0.1.33
+
+* bugfix template logrotate.conf
+
 ## 0.1.32
 
 * bugfix puppet managed dir
