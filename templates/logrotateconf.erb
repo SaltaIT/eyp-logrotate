@@ -33,7 +33,7 @@ dateext
 include /etc/logrotate.d
 
 # puppet managed log rotation configuration
-include /etc/logrotate.d/puppet-managed
+include <%= @puppet_managed_dir %>
 
 # no packages own wtmp, or btmp -- we'll rotate them here
 /var/log/wtmp {
