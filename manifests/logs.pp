@@ -28,7 +28,7 @@ define logrotate::logs(
   }
   else
   {
-    $logrotate_filename="${logrotate::params::puppet_managed_dir}/${namelog}"
+    $logrotate_filename="${logrotate::puppet_managed_dir}/${namelog}"
   }
 
   if($ensure=='present' and $log==undef)

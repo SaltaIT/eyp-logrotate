@@ -29,7 +29,7 @@ class logrotate (
       }
     }
 
-    file { $logrotate::params::puppet_managed_dir:
+    file { $puppet_managed_dir:
       ensure  => 'directory',
       owner   => 'root',
       group   => 'root',
