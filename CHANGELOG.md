@@ -1,5 +1,9 @@
 # CHANGELOG
 
+## 0.1.34
+
+* rewrite puppet_managed_dir for **logrotate::logs**
+
 ## 0.1.33
 
 * bugfix template logrotate.conf
