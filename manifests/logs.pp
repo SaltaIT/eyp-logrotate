@@ -19,7 +19,10 @@ define logrotate::logs(
                         $create_group  = undef,
                         $custom_file   = undef,
                       ) {
+  include ::logrotate
 
+  $puppet_managed_dir = $logrotate::puppet_managed_dir
+  
   #
   if($custom_file!=undef)
   {
@@ -28,15 +31,13 @@ define logrotate::logs(
   }
   else
   {
-    $logrotate_filename="${logrotate::puppet_managed_dir}/${namelog}"
+    $logrotate_filename="${puppet_managed_dir}/${namelog}"
   }
 
   if($ensure=='present' and $log==undef)
   {
     fail('Must pass log to Logrotate::Logs while ensuring it is present')
   }
-
-  include ::logrotate
 
   file { $logrotate_filename:
     ensure  => $ensure,
