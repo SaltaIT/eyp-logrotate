@@ -22,7 +22,7 @@ define logrotate::logs(
   include ::logrotate
 
   $puppet_managed_dir = $logrotate::puppet_managed_dir
-  
+
   #
   if($custom_file!=undef)
   {
