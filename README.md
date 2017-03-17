@@ -115,6 +115,7 @@ This is going to generate the following logrotate configuration files:
 }
 ```
 #### /etc/logrotate.d/puppet-managed/bitban1
+
 ```
 /deploy/VAR/local/elespanol/www.elespanol.com/BB3Logs/*log* {
   su bbt-deploy bbt-deploy
@@ -135,8 +136,6 @@ This is going to generate the following logrotate configuration files:
   rotate 3
 }
 ```
-
-
 
 ## Reference
 
