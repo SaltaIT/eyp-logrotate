@@ -1,6 +1,6 @@
 # CHANGELOG
 
-## 0.1.25
+## 0.1.35
 
 * added sharedscripts option to **logrotate::logs**
 
