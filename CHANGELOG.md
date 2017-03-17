@@ -1,5 +1,9 @@
 # CHANGELOG
 
+## 0.1.25
+
+* added sharedscripts option to **logrotate::logs**
+
 ## 0.1.34
 
 * rewrite puppet_managed_dir for **logrotate::logs**

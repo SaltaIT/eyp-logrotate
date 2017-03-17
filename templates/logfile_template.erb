@@ -39,6 +39,9 @@
 <% if defined?(@size) -%>
   size <%= @size %>
 <% end -%>
+<% if @sharedscripts -%>
+sharedscripts
+<% end -%>
 <% if defined?(@postrotate) -%>
   postrotate
     <%= @postrotate %>

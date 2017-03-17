@@ -18,6 +18,7 @@ define logrotate::logs(
                         $create_owner  = undef,
                         $create_group  = undef,
                         $custom_file   = undef,
+                        $sharedscripts = false,
                       ) {
   include ::logrotate
 
