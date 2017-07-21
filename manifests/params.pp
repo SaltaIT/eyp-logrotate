@@ -6,7 +6,7 @@ class logrotate::params {
   case $::osfamily
   {
     'redhat':
-        {
+    {
       case $::operatingsystemrelease
       {
         /^[5-7].*$/:
