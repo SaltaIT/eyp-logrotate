@@ -1,5 +1,4 @@
-# logrotate ![status ready](https://img.shields.io/badge/status-ready-brightgreen.svg) ![doc completed](https://img.shields.io/badge/doc-completed-brightgreen.svg)
-
+# logrotate
 
 #### Table of Contents
 
@@ -76,7 +75,7 @@ logrotate::logs { 'example':
 }
 
 logrotate::logs { 'bitban1':
-  log           => '/deploy/VAR/local/elespanol/www.elespanol.com/BB3Logs/*log*',
+  log           => '/deploy/VAR/local/systemadmin/www.systemadmin.es/BB3Logs/*log*',
   su            => [ 'bbt-deploy', 'bbt-deploy' ],
   rotate        => '2',
   frequency     => 'daily',
@@ -114,10 +113,10 @@ This is going to generate the following logrotate configuration files:
   endscript
 }
 ```
-#### /etc/logrotate.d/puppet-managed/bitban1
+#### /etc/logrotate.d/puppet-managed/demo
 
 ```
-/deploy/VAR/local/elespanol/www.elespanol.com/BB3Logs/*log* {
+/deploy/VAR/local/systemadmin/www.systemadmin.es/BB3Logs/*log* {
   su bbt-deploy bbt-deploy
   rotate 2
   daily
