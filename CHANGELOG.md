@@ -1,5 +1,9 @@
 # CHANGELOG
 
+## 0.1.36
+
+* added Ubuntu 18.04 support
+
 ## 0.1.35
 
 * added sharedscripts option to **logrotate::logs**
