@@ -7,11 +7,14 @@ class logrotate::params {
   {
     'redhat':
     {
+      $enforce_wtmp_and_btmp_default = true
       case $::operatingsystemrelease
       {
         /^[5-7].*$/:
         {
           $su_default=undef
+          $compresscmd_default=undef
+          $uncompresscmd_default=undef
         }
         default: { fail("Unsupported RHEL/CentOS version! - ${::operatingsystemrelease}")  }
       }
@@ -19,6 +22,7 @@ class logrotate::params {
     }
     'Debian':
     {
+      $enforce_wtmp_and_btmp_default = true
       case $::operatingsystem
       {
         'Ubuntu':
@@ -28,6 +32,8 @@ class logrotate::params {
             /^1[468].*$/:
             {
               $su_default='root syslog'
+              $compresscmd_default=undef
+              $uncompresscmd_default=undef
             }
             default: { fail("Unsupported Ubuntu version! - ${::operatingsystemrelease}")  }
           }
@@ -38,15 +44,24 @@ class logrotate::params {
     }
     'Suse':
     {
+      $enforce_wtmp_and_btmp_default = false
       case $::operatingsystem
       {
         'SLES':
         {
           case $::operatingsystemrelease
           {
-            /^1[12].3$/:
+            /^11.3$/:
             {
               $su_default=undef
+              $compresscmd_default=undef
+              $uncompresscmd_default=undef
+            }
+            /^12.3$/:
+            {
+              $su_default=undef
+              $compresscmd_default='/usr/bin/xz'
+              $uncompresscmd_default='/usr/bin/xzdec'
             }
             default: { fail("Unsupported operating system ${::operatingsystem} ${::operatingsystemrelease}") }
           }

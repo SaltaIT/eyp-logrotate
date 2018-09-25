@@ -29,12 +29,21 @@ compress
 dateext
 <% end -%>
 
+<% if defined?(@compresscmd) -%>
+compresscmd <%= @compresscmd %>
+<% end -%>
+
+<% if defined?(@uncompresscmd) -%>
+uncompresscmd <%= @uncompresscmd %>
+<% end -%>
+
 # packages drop log rotation information into this directory
 include /etc/logrotate.d
 
 # puppet managed log rotation configuration
 include <%= @puppet_managed_dir %>
 
+<% if @enforce_wtmp_and_btmp -%>
 # no packages own wtmp, or btmp -- we'll rotate them here
 /var/log/wtmp {
     missingok
@@ -49,5 +58,6 @@ include <%= @puppet_managed_dir %>
     create 0660 root utmp
     rotate 1
 }
+<% end -%>
 
 # DO NOT CONFIGURE system-specific logs here

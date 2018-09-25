@@ -8,6 +8,9 @@ class logrotate (
                   $frequency                        = 'weekly',
                   $su                               = $logrotate::params::su_default,
                   $puppet_managed_dir               = $logrotate::params::puppet_managed_dir_default,
+                  $compresscmd                      = $logrotate::params::compresscmd_default,
+                  $uncompresscmd                    = $logrotate::params::uncompresscmd_default,
+                  $enforce_wtmp_and_btmp            = $logrotate::params::enforce_wtmp_and_btmp_default,
                 ) inherits logrotate::params {
 
   package { $logrotate::params::package_logrotate:

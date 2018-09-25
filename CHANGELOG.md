@@ -3,6 +3,8 @@
 ## 0.1.37
 
 * added SLES 12.3 support
+* added **compresscmd** and **uncompresscmd**
+* added variable to disable basic config for wtmp and btmp (**enforce_wtmp_and_btmp**)
 
 ## 0.1.36
 
