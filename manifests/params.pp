@@ -44,7 +44,7 @@ class logrotate::params {
         {
           case $::operatingsystemrelease
           {
-            '11.3':
+            /^1[12].3$/:
             {
               $su_default=undef
             }

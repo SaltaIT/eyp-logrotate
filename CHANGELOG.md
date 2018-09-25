@@ -1,5 +1,9 @@
 # CHANGELOG
 
+## 0.1.37
+
+* added SLES 12.3 support
+
 ## 0.1.36
 
 * added Ubuntu 18.04 support
