@@ -1,5 +1,9 @@
 # CHANGELOG
 
+## 0.1.38
+
+* allow **logrotate::logs::postrotate** to be an array
+
 ## 0.1.37
 
 * added SLES 12.3 support

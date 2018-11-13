@@ -44,7 +44,13 @@ sharedscripts
 <% end -%>
 <% if defined?(@postrotate) -%>
   postrotate
+    <%- if @postrotate.kind_of?(Array) -%>
+    <%- @postrotate.each do |val| -%>
+    <%= val %>
+    <%- end -%>
+    <%- else -%>
     <%= @postrotate %>
+    <%- end -%>
   endscript
 <% end -%>
 }
