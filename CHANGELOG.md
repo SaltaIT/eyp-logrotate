@@ -1,5 +1,9 @@
 # CHANGELOG
 
+## 0.1.39
+
+* SLES11SP4 support
+
 ## 0.1.38
 
 * allow **logrotate::logs::postrotate** to be an array

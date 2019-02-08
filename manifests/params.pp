@@ -57,7 +57,7 @@ class logrotate::params {
               $compresscmd_default=undef
               $uncompresscmd_default=undef
             }
-            /^12.3$/:
+            /^12.[34]$/:
             {
               $su_default=undef
               $compresscmd_default='/usr/bin/xz'
