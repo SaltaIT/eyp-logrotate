@@ -10,7 +10,7 @@ class logrotate::params {
       $enforce_wtmp_and_btmp_default = true
       case $::operatingsystemrelease
       {
-        /^[5-7].*$/:
+        /^[5-8].*$/:
         {
           $su_default=undef
           $compresscmd_default=undef

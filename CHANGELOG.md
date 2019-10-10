@@ -1,5 +1,9 @@
 # CHANGELOG
 
+## 0.1.40
+
+* Added RHEL 8 support
+
 ## 0.1.39
 
 * SLES11SP4 support
