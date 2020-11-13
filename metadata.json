@@ -1,6 +1,6 @@
 {
   "name": "eyp-logrotate",
-  "version": "0.1.40",
+  "version": "1.0.40",
   "author": "Jordi Prats",
   "summary": "manages logrotate",
   "license": "Apache-2.0",
