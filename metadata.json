@@ -1,12 +1,12 @@
 {
   "name": "eyp-logrotate",
-  "version": "0.1.40",
-  "author": "eyp",
+  "version": "1.0.40",
+  "author": "Jordi Prats",
   "summary": "manages logrotate",
   "license": "Apache-2.0",
-  "source": "https://github.com/NTTCom-MS/eyp-logrotate",
-  "project_page": "https://github.com/NTTCom-MS/eyp-logrotate",
-  "issues_url": "https://github.com/NTTCom-MS/eyp-logrotate/issues",
+  "source": "https://github.com/SaltaIT/eyp-logrotate",
+  "project_page": "https://github.com/SaltaIT/eyp-logrotate",
+  "issues_url": "https://github.com/SaltaIT/eyp-logrotate/issues",
   "dependencies": [
     {"name":"puppetlabs/stdlib","version_requirement":">= 1.0.0 < 9.9.9"}
   ],
